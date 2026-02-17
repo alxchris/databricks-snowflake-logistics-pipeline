@@ -11,41 +11,52 @@ This project demonstrates a production-style data engineering pipeline built usi
 
 The pipeline simulates a logistics company processing shipment, customer, and operational event data to produce business-ready KPIs.
 ________________________________________
-🏗 Architecture Overview
+# 🏗 Architecture Overview
 
-Raw Data Generation
-        ↓
-Databricks Bronze (Raw Delta)
-        ↓
-Databricks Silver (Cleaned + Deduplicated)
-        ↓
-Databricks Gold (Business KPIs)
-        ↓
-Export as Parquet
-        ↓
-Snowflake Internal Stages
-        ↓
+## High-Level Flow
+
+Raw Data Generation  
+↓  
+Databricks Bronze (Raw Delta Tables)  
+↓  
+Databricks Silver (Cleaned + Deduplicated Data)  
+↓  
+Databricks Gold (Business KPI Tables)  
+↓  
+Export as Parquet Files  
+↓  
+Snowflake Internal Stages  
+↓  
 Structured Warehouse Tables
 
-Databricks handles transformation and data quality logic.
+Databricks handles transformation and data quality logic.  
 Snowflake serves as the analytical warehouse layer.
+
 ________________________________________
-🧱 Databricks Layering
-**Bronze Layer**
-  •	Raw ingestion
-  •	Schema-on-read
-  •	Stored in Delta format
-**Silver Layer**
-  •	Deduplication using Delta MERGE
-  •	Business rule enforcement:
-      o	Remove negative shipment weights
-      o	Validate origin/destination ports
-  •	Ensures 1 record per shipment_id
-**Gold Layer**
+
+# 🔷 Architecture Diagram
+
+
+________________________________________
+# 🧱 Databricks Layering
+
+## 🥉 Bronze Layer
+- Raw ingestion
+- Schema-on-read
+- Stored in Delta format
+
+## 🥈 Silver Layer
+- Deduplication using Delta MERGE
+- Business rule enforcement:
+  - Remove negative shipment weights
+  - Validate origin/destination ports
+- Ensures 1 record per `shipment_id`
+
+## 🥇 Gold Layer
 Curated KPI tables:
-  •	gold_customer_monthly_kpis
-  •	gold_lane_kpis
-  •	gold_latest_shipment_event_status
+- `gold_customer_monthly_kpis`
+- `gold_lane_kpis`
+- `gold_latest_shipment_event_status`
 
   🔁 Incremental Processing (MERGE Logic)
   Delta Lake MERGE used for idempotent upserts:
