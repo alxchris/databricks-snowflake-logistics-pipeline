@@ -1,3 +1,7 @@
+![Databricks](https://img.shields.io/badge/Databricks-FF3621?logo=databricks&logoColor=white)
+![Snowflake](https://img.shields.io/badge/Snowflake-29B5E8?logo=snowflake&logoColor=white)
+![Delta Lake](https://img.shields.io/badge/Delta_Lake-003B57?logo=apache-spark&logoColor=white)
+
 # databricks-snowflake-logistics-pipeline
 🚀 **Databricks → Snowflake Logistics Analytics Pipeline
 Production-Style Cross-Platform Data Engineering Case Study**
