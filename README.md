@@ -40,7 +40,7 @@ ________________________________________
 
 ## 🔷 Architecture Diagram
 <p align="center">
-  <img src="assets/databricks-snowflake-architecture.png" width="700"/>
+  <img src="architecture/databricks-snowflake-architecture.png" width="700"/>
 </p>
 
 ________________________________________
