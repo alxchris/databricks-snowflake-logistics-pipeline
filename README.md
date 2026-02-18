@@ -39,8 +39,9 @@ Snowflake serves as the analytical warehouse layer.
 ________________________________________
 
 ## 🔷 Architecture Diagram
-
-![Databricks Snowflake Architecture](assets/databricks-snowflake-architecture.png)
+<p align="center">
+  <img src="assets/databricks-snowflake-architecture.png" width="700"/>
+</p>
 
 ________________________________________
 # 🧱 Databricks Layering
